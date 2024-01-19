@@ -4,22 +4,24 @@ This is a [Next.js](https://nextjs.org/) project with Mongodb database and use "
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm install
-
 you need add .env file where write 
 MONGO_URL= 
 in your MONGO_URL Access your Atlas data using mongodb`s native drivers(e.g.Node.js,Go,etc.)
+
+#Local
+First, run the development server:
+```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+
+#Docker
+if you want to use docker you still need .env
+docker build -t your-image-name .
+docker run -p 3000:3000 -d your-image-name
+and open http://localhost:3000/
+
+
+
 
 
 <img src="./public/bitcoin.png" alt="Bitcoin draw graphic">
