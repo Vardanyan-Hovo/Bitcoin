@@ -9,6 +9,9 @@ First, run the development server:
 ```bash
 npm install
 
+you need add .env file where write 
+MONGO_URL= 
+in your MONGO_URL Access your Atlas data using mongodb`s native drivers(e.g.Node.js,Go,etc.)
 npm run dev
 # or
 yarn dev
