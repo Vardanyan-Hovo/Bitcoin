@@ -63,7 +63,7 @@ export const data = createSlice({
                                 console.log("name: "+e.time)
                                 console.log("GBP: "+e.bpi.GBP.rate_float);
                                 console.log("EUR: "+e.bpi.EUR.rate_float);
-                            let x =format(e.time, "MMM dd HH:mm ")
+
                             return {
                               name: e.time,
                               USE: e.bpi.USD.rate_float,
