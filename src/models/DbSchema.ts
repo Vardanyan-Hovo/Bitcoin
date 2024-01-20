@@ -48,7 +48,6 @@ const DbSchema = new Schema({
 DbSchema.post('validate', function(doc){
     console.log("validate=[" + doc + "]");
 })
-
-const dbSchema = models?.db || model("bitcoinexchange", DbSchema)
+const dbSchema = models?.bitcoinexchanges || model("bitcoinexchanges", DbSchema)
 
 export default dbSchema;

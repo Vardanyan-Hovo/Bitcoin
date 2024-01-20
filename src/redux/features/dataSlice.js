@@ -60,10 +60,10 @@ export const data = createSlice({
         argumentsDraw : ((state, action) => {
 
                    state.data = action.payload.map(function(e){
-                                console.log("name: "+e.time)
-                                console.log("GBP: "+e.bpi.GBP.rate_float);
-                                console.log("EUR: "+e.bpi.EUR.rate_float);
-
+                                // console.log("name: "+e.time)
+                                // console.log("GBP: "+e.bpi.USD.rate_float);
+                                // console.log("GBP: "+e.bpi.GBP.rate_float);
+                                // console.log("EUR: "+e.bpi.EUR.rate_float);
                             return {
                               name: e.time,
                               USE: e.bpi.USD.rate_float,

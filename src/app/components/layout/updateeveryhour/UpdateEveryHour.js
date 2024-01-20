@@ -7,16 +7,18 @@ const UpdateEveryHour = () => {
 
     async function updateMongodb() {
         try {
+           
             const response = await fetch('/api/controller')
-            if (!response.ok) {
+            if (response?.ok) {
+                const responseBody = await response.json();
+            }
+            else
+            {
                 throw new Error('Failed to submit the data. Please try again.')
             }
-
-            const responseBody = await response.json();
-            handleDecrement(responseBody);
         }
         catch(e){
-            console.log("fetch error [" + JSON.stringify(e) + "]");
+            console.log("Error " + e);
         }
     }
 
@@ -25,9 +27,10 @@ const UpdateEveryHour = () => {
     {
         let minut;
         setIsLoading(true);
-        setInterval(()=>{
+        // setInterval(()=>{
                 updateMongodb();
-        },36000);
+        // },3600000);
+        setIsLoading(false);
     }
     return (
         <button 

@@ -34,17 +34,22 @@ export default  function RangeDateInput(){
                 body: JSON.stringify({dataFirst, dataLast}),
                 headers: {'Content-Type' : 'application/json'}
             })
-
             const responseBody = await response.json();
 
-            console.log("responseBody = " + responseBody);
-            
-            //redux dispach
-            dispatch(argumentsDraw(responseBody));
-    
+            if (responseBody?.ok)
+            {
+                console.log("responseBody = " + responseBody);
+
+                //redux dispach
+                dispatch(argumentsDraw(responseBody));
+            }
+            else{
+                throw new Error("Response error data does not exist")
+            }
+
         }
         catch(e){
-            console.log(" [" + JSON.stringify(e) + "]");
+            console.log(e + "");
         }
         finally {
             // Set loading to false when the request completes
