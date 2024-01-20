@@ -28,14 +28,25 @@ export async function POST(req){
 
             //max 6 data
             let sixHours = (1000 * 60 * 60) * 6;
-            let intervalInMillis = (differenceInMillis >= sixHours) ? differenceInMillis / 6 : (differenceInMillis / (1000 * 60 * 60));
+            let intervalInMillis = 0;
+            if (differenceInMillis >= sixHours) 
+            {
+                intervalInMillis = ((differenceInMillis / 5) + (differenceInMillis % 5));
+            } else{
+                intervalInMillis = (differenceInMillis / (1000 * 60 * 60));
+            }
+                
             let s = dateFirstObject.getTime();
-            while (s < dateLastObject.getTime())
+            while (s <= dateLastObject.getTime())
             {
                 const z = new Date(s);
                 const searchData = format(z, "MMM dd, yyyy 'at' HH:mm 'GMT'");
                 let dataQuesion = await DbSchema.find({ "time.updateduk": searchData }).exec();
-                if (dataQuesion?.ok)
+
+                console.log("      " + JSON.stringify(dataQuesion) + "   typeof(dataQuesion)  " + typeof(dataQuesion))
+
+                console.log("searchData    " + searchData + "   typeof(searchData)  " + typeof(searchData));
+                if (dataQuesion && Object.keys(dataQuesion).length > 0)
                 {
                     let objectItem = {
                         time : searchData,
