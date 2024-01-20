@@ -15,7 +15,7 @@ npm install
 npm run dev
 
 #Docker
-if you want to use docker you still need .env
+<p>if you want to use docker you still need .env</p>
 docker build -t your-image-name .
 docker run -p 3000:3000 -d your-image-name
 and open http://localhost:3000/
@@ -24,7 +24,7 @@ and open http://localhost:3000/
 
 
 
-<img src={"./public/bitcoin.png"} alt="Bitcoin draw graphic">
+<img src="./public/bitcoin.png">
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
