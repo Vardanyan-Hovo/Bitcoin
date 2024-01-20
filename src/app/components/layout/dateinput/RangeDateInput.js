@@ -36,7 +36,7 @@ export default  function RangeDateInput(){
             })
             const responseBody = await response.json();
 
-            if (responseBody?.ok)
+            if (responseBody && Object.keys(responseBody).length > 0)
             {
                 console.log("responseBody = " + responseBody);
 
