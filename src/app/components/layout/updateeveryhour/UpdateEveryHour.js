@@ -25,16 +25,9 @@ const UpdateEveryHour = () => {
     {
         let minut;
         setIsLoading(true);
-
-        while(true)
-        {
-            minut = new Date().getMinutes();
-            if (minut == 0)
-            {
+        setInterval(()=>{
                 updateMongodb();
-            }
-            console.log(minut);
-        }
+        },36000);
     }
     return (
         <button 
