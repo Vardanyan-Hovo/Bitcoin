@@ -30,7 +30,7 @@ export async function POST(req){
             let sixHours = (1000 * 60 * 60) * 6;
             let intervalInMillis = (differenceInMillis >= sixHours) ? differenceInMillis / 6 : (differenceInMillis / (1000 * 60 * 60));
             let s = dateFirstObject.getTime();
-            while (s <= dateLastObject.getTime())
+            while (s < dateLastObject.getTime())
             {
                 const z = new Date(s);
                 const searchData = format(z, "MMM dd, yyyy 'at' HH:mm 'GMT'");
