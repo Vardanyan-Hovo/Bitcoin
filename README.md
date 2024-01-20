@@ -13,6 +13,8 @@ First, run the development server:
 ```bash
 npm install
 npm run dev
+```
+
 
 #Docker
 <p>if you want to use docker you still need .env</p>
@@ -21,10 +23,7 @@ docker run -p 3000:3000 -d your-image-name
 and open http://localhost:3000/
 
 
-
-
-
-<img src="./public/bitcoin.png">
+![Bitcoin](https://github.com/Vardanyan-Hovo/Bitcoin/blob/main/public/bitcoin.png)
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
