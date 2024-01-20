@@ -24,7 +24,7 @@ and open http://localhost:3000/
 
 
 
-<img src="./public/bitcoin.png" alt="Bitcoin draw graphic">
+<img src={"./public/bitcoin.png"} alt="Bitcoin draw graphic">
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
