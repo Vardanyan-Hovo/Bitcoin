@@ -8,20 +8,22 @@ you need add .env file where write
 MONGO_URL= 
 in your MONGO_URL Access your Atlas data using mongodb`s native drivers(e.g.Node.js,Go,etc.)
 
-#Local
+### Local
 First, run the development server:
-```bash
+```
 npm install
 npm run dev
 ```
 
 
-#Docker
+### Docker
 <p>if you want to use docker you still need .env</p>
+
+```
 docker build -t your-image-name .
 docker run -p 3000:3000 -d your-image-name
 and open http://localhost:3000/
-
+```
 
 ![Bitcoin](https://github.com/Vardanyan-Hovo/Bitcoin/blob/main/public/bitcoin.png)
 
